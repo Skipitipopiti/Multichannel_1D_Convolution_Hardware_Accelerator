@@ -1,0 +1,15 @@
+prendHo filtrato le combinazioni con 4 canali di uscita, perché abbiamo 4 MAC.
+Di queste ho preso quelle con T multiplo di 128 in modo da "finire precisi".
+Delle combinazioni rimaste, la ultime due permettono di utilizzare al massimo lo SP;
+la prima ha il T maggiore. La seconda è una via di mezzo.
+
+Aggiornamento: Alla fine, per ottimizzare il caricamento nello SP e la sua lettura, si è scelta l'ultima opzione.
+Questa permette di leggere, con una lettura (da 4B), 4 campioni (da 1B, uno per ogni canale di ingresso corrente) e 
+successivamente mandarli in // ai 4 SR corrispondenti ai 4 canali di ingresso correnti. 
+
+T   Ci  Co  Ntile
+15	7	4	128
+8	12	4	128
+7	13	4	128
+5	15	4	128
+4	16	4	12

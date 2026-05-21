@@ -1,0 +1,32 @@
+%Warning-WIDTHEXPAND: /foss/designs/hw/accelerator/acc_DP.sv:57:32: Operator PATMEMBER expects 40 bits on the Pattern value, but Pattern value's SEL generates 8 bits.
+                                                                  : ... note: In instance 'conv1d_tb_wrapper.u_conv1d_obi.u_conv1d.u_acc_DP'
+   57 |             .SR_in    ('{SP_out.o[0], SP_out.o[1], SP_out.o[2], SP_out.o[3], '0}), 
+
+
+%Warning-IMPORTSTAR: /foss/designs/hw/accelerator/sr.sv:9:18: Import::* in $unit scope may pollute global namespace
+    9 | import DP_package::*;
+
+%Warning-WIDTHEXPAND: /foss/designs/hw/accelerator/acc_DP.sv:57:32: Operator PATMEMBER expects 40 bits on the Pattern value, but Pattern value's SEL generates 8 bits.
+                                                                  : ... note: In instance 'conv1d_tb_wrapper.u_conv1d_obi.u_conv1d.u_acc_DP'
+   57 |             .SR_in    ('{SP_out.o[0], SP_out.o[1], SP_out.o[2], SP_out.o[3], '0}), 
+   
+
+%Warning-LATCH: /foss/designs/hw/accelerator/acc_CU.sv:460:5: Latch inferred for signal 'conv1d_tb_wrapper.u_conv1d_obi.u_conv1d.SP_add' (not all control paths of combinational always assign a value)
+                                                            : ... Suggest use of always_latch for intentional latches
+  460 |     always_comb begin
+      |     ^~~~~~~~~~~
+                ... For warning description see https://verilator.org/warn/LATCH?v=5.036
+                ... Use "/* verilator lint_off LATCH */" and lint_on around source to disable this message.
+
+
+
+
+
+- V e r i l a t i o n   R e p o r t: Verilator 5.036 2025-04-27 rev v5.036
+- Verilator: Built from 1.603 MB sources in 27 modules, into 0.800 MB in 14 C++ files needing 0.000 MB
+- Verilator: Walltime 0.306 s (elab=0.005, cvt=0.049, bld=0.207); cpu 0.074 s on 1 threads; alloced 27.504 MB
+Running Verilator simulation...
+[LOG   ] conv1d_tb.cpp:218 >        [    0] Starting simulation...
+[WARN  ] conv1d_tb.cpp:654 >        [ 1018] Watchdog timeout reached: terminating simulation.
+[ERR!  ] conv1d_tb.cpp:684 >        [ 1018] CHECKS FAILED > errors: 1/0
+
